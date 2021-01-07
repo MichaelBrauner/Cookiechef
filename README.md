@@ -1,4 +1,4 @@
-# 🚀 Build your own cookie consent with ease!
+# Build your own cookie consent with ease!
 
 Every page within the EU needs a cookie banner these days. However, finding the right one can be difficult depending on the CMS system or framework.
 
