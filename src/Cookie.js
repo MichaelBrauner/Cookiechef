@@ -7,13 +7,13 @@ export class Cookie {
         document.cookie = `${name}=${value};expires=${date.toUTCString()};path=/${secure ?? ''}${sameSite ? ';samesite=' + sameSite : '' }`
     }
 
-    removeCookie(cookie) {
+    static removeCookie(cookie) {
         if (cookie instanceof Array) {
             cookie.forEach((cookie) => {
                 this.setCookie(cookie, '', -1)
             })
         } else {
-            this.setCookie('cookie', '', -1)
+            this.setCookie(cookie, '', -1)
         }
     }
 

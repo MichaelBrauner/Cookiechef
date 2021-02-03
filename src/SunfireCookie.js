@@ -39,6 +39,7 @@ export class SunfireCookie {
             data.forEach((cookie) => {
                 !this.isApproved(cookie) && this.$cookieStore.consents_approved.push(cookie)
             })
+
         } else {
 
             this.$cookieStore.consents_denied = this.$cookieStore.consents_denied.filter((cookie) => {
@@ -79,10 +80,10 @@ export class SunfireCookie {
         this.approve(this.getCookiesOfGroup(name))
     }
 
-    async denyGroup(name) {
+    denyGroup(name) {
         this.createBasicStore()
         this.deny(this.getCookiesOfGroup(name))
-        await this.removeAllCookiesOfGroup(name)
+        this.removeAllCookiesOfGroup(name)
     }
 
     getCookiesOfGroup(name) {
@@ -96,7 +97,7 @@ export class SunfireCookie {
     }
 
     removeAllCookiesOfGroup(name) {
-        this.removeCookie(
+        Cookie.removeCookie(
             this.getCookiesOfGroup(name)
         )
     }
@@ -107,16 +108,6 @@ export class SunfireCookie {
 
     isDenied(name) {
         return this.$cookieStore.consents_denied.indexOf(name) !== -1
-    }
-
-    removeCookie(cookie) {
-        if (cookie instanceof Array) {
-            cookie.forEach((cookie) => {
-                Cookie.setCookie(cookie, '', -1)
-            })
-        } else {
-            Cookie.setCookie('cookie', '', -1)
-        }
     }
 
     acceptedStore() {
@@ -167,7 +158,6 @@ export class SunfireCookie {
 
         const cookie = group && group.cookies.find((cookie) => cookie.name === name)
 
-
         if (!group) {
             return false
         }
@@ -185,8 +175,6 @@ export class SunfireCookie {
         }
 
         return false
-
-
     }
 
     getBaseGroupOfCookie(name) {
@@ -243,7 +231,6 @@ export class SunfireCookie {
         this.$cookies = JSON.parse(data)
 
         this.initData()
-        // this.fetchBanner()
     }
 
     save() {
@@ -267,11 +254,8 @@ export class SunfireCookie {
     }
 
     refreshData() {
-
         this.fetchCookieStore()
-
         this.$cookies = this.vote()
-
         return this.$cookies
     }
 
