@@ -1,7 +1,7 @@
-import {SunfireCookie} from "./SunfireCookie";
+import {Whisk} from "./SunfireCookie";
 
 if (!window.sunfireCookie) {
-    window.sunfireCookie = new SunfireCookie()
+    window.sunfireCookie = new Whisk()
 }
 
-export default SunfireCookie
+export default Whisk

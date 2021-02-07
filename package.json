@@ -2,24 +2,32 @@
   "name": "my-webpack-project",
   "version": "1.0.0",
   "description": "My webpack project",
-  "main": "index.js",
+  "main": "SunfireCookie.js",
+  "files": [
+    "src/SunfireCookie.js"
+  ],
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/node": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.13",
+    "@babel/plugin-proposal-private-methods": "^7.12.13",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.12.11",
     "@webpack-cli/init": "^1.1.1",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "lodash": "^4.17.20",
     "prettier": "2.2.1",
     "terser-webpack-plugin": "^5.0.3",
     "webpack": "^5.11.1",
-    "webpack-cli": "^4.3.1"
+    "webpack-cli": "^4.3.1",
+    "webpack-node-externals": "^2.5.2"
   },
   "scripts": {
     "test": "jest",
-    "build": "webpack",
+    "build": "cross-env NODE_ENV=production webpack --config=webpack.config.js",
     "watch": "webpack -w"
   },
   "keywords": [
