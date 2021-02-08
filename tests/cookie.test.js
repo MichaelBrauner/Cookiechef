@@ -1,4 +1,4 @@
-import {Whisk} from "./../../js/src/Whisk";
+import {Whisk} from "../src/Whisk";
 import {Cookie} from "../src/Cookie"
 
 let globalInstance = null
