@@ -7,11 +7,7 @@ export default {
         name: 'Whisk',
         file: 'dist/whisk.min.js',
         format: 'umd',
-        globals: {
-            'lodash': 'lodash',
-        },
     },
-    external: [ 'regenerator-runtime/runtime', 'lodash'],
     plugins: [
         uglify(),
         babel({

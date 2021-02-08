@@ -1,11 +1,8 @@
-import 'regenerator-runtime/runtime'
 import {Cookie} from "./Cookie";
 import {Encoder} from "./Encoder";
-import {isEmpty} from "lodash";
 
 export class Whisk {
 
-    #COOKIE_CHECKED_VALUE = 1
     #COOKIE_DOMAIN
     #SAME_SITE
     #COOKIE_NAME = 'cookie-consent'
@@ -242,7 +239,7 @@ export class Whisk {
     #allCookiesOfGroupApproved(name) {
         const group = this.#getGroup(name)
 
-        return group && !isEmpty(group.cookies) && group.cookies.every((cookie) => {
+        return group && group.cookies.length && group.cookies.every((cookie) => {
             return this.isApproved(cookie.name)
         })
     }
