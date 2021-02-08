@@ -26,7 +26,8 @@
     "rollup-plugin-uglify": "^6.0.4"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "rollup -c"
   },
   "keywords": [
     "cookie"
