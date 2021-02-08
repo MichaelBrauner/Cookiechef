@@ -1,10 +1,13 @@
 {
-  "name": "my-webpack-project",
+  "name": "whiskjs",
   "version": "1.0.0",
-  "description": "My webpack project",
-  "main": "SunfireCookie.js",
+  "description": "A lightweight framework for building your own cookie-consent banner.",
+  "main": "dist/whisk.min.js",
   "files": [
-    "src/SunfireCookie.js"
+    "src/Whisk.js",
+    "src/Cookie.js.js",
+    "src/Encoder.js.js",
+    "dist/whisk.min.js"
   ],
   "dependencies": {},
   "devDependencies": {
