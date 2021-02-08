@@ -3,6 +3,8 @@
 # Whisk
 A lightweight framework for building your own cookie-consent banner.
 
+![Tests](https://github.com/MichaelBrauner/Whisk/workflows/Run%20Jest%20Tests/badge.svg?branch=main)
+
 Every page within the EU needs a cookie banner these days. However, finding the right one can be difficult depending on the CMS system or framework.
 
 It is not even primarily important to satisfy personal preferences - but to meet the legal requirements.
